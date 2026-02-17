@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Header.css';
 
-// SVG иконки
+// SVG иконки (оставьте как есть)
 const SearchIcon = () => (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="11" cy="11" r="8"></circle>
@@ -30,6 +30,7 @@ const Header = ({ searchQuery, setSearchQuery }) => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const location = useLocation();
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -40,13 +41,21 @@ const Header = ({ searchQuery, setSearchQuery }) => {
     }, []);
 
     const scrollToSection = (sectionId) => {
+        // Если мы не на главной странице, сначала переходим туда
         if (location.pathname !== '/') {
-            window.location.href = `/#${sectionId}`;
-            return;
-        }
-        const element = document.getElementById(sectionId);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+            navigate('/');
+            // Ждём перехода и затем скроллим
+            setTimeout(() => {
+                const element = document.getElementById(sectionId);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 100);
+        } else {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
         }
         setIsMobileMenuOpen(false);
     };
