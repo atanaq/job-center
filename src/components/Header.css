@@ -1,0 +1,311 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
+    padding: 16px 0;
+    transition: all var(--transition-normal);
+}
+
+.header.scrolled {
+    padding: 12px 0;
+    box-shadow: var(--shadow-lg);
+    background: var(--primary-blue-dark);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+/* Логотип */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: transform var(--transition-fast);
+}
+
+.logo:hover {
+    transform: scale(1.02);
+}
+
+.logo-icon {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, var(--accent-orange), #e8941c);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    color: var(--white);
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(245, 166, 35, 0.3);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-main {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.2;
+}
+
+.logo-sub {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+}
+
+/* Навигация */
+.nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-list li a {
+    padding: 10px 20px;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+    font-size: 0.95rem;
+    border-radius: var(--radius-full);
+    transition: all var(--transition-fast);
+    position: relative;
+}
+
+.nav-list li a:hover {
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-list li a::after {
+    content: '';
+    position: absolute;
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--accent-orange);
+    border-radius: var(--radius-full);
+    transition: width var(--transition-fast);
+}
+
+.nav-list li a:hover::after {
+    width: 30px;
+}
+
+/* Правая часть */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Поиск */
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    width: 0;
+    padding: 0;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-full);
+    color: var(--white);
+    font-size: 0.9rem;
+    transition: all var(--transition-normal);
+    opacity: 0;
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.search-wrapper.open .search-input {
+    width: 200px;
+    padding: 10px 44px 10px 16px;
+    opacity: 1;
+}
+
+.search-btn {
+    position: absolute;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    transition: all var(--transition-fast);
+}
+
+.search-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* CTA Кнопка */
+.cta-btn {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, var(--accent-orange), #e8941c);
+    color: var(--white);
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: var(--radius-full);
+    box-shadow: 0 4px 15px rgba(245, 166, 35, 0.4);
+    transition: all var(--transition-fast);
+}
+
+.cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(245, 166, 35, 0.5);
+}
+
+.cta-btn:active {
+    transform: translateY(0);
+}
+
+/* Мобильное меню */
+.mobile-menu-btn {
+    display: none;
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    color: var(--white);
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+}
+
+.mobile-menu-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.mobile-overlay {
+    display: none;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .nav-list {
+        gap: 4px;
+    }
+
+    .nav-list li a {
+        padding: 8px 14px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 12px 0;
+    }
+
+    .logo-text {
+        display: none;
+    }
+
+    .nav {
+        position: fixed;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: var(--primary-blue-dark);
+        padding: 20px;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--transition-normal);
+        box-shadow: var(--shadow-xl);
+    }
+
+    .nav.open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .nav-list li {
+        width: 100%;
+    }
+
+    .nav-list li a {
+        display: block;
+        padding: 14px 20px;
+        text-align: center;
+        border-radius: var(--radius-lg);
+    }
+
+    .cta-btn {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    .mobile-overlay {
+        display: block;
+        position: fixed;
+        top: 68px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+
+    .search-wrapper.open .search-input {
+        width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-wrapper {
+        display: none;
+    }
+    /* Добавьте эти стили в конец файла Header.css */
+
+    .nav-highlight {
+        background: rgba(245, 166, 35, 0.2) !important;
+        color: var(--accent-orange) !important;
+    }
+
+    .nav-highlight:hover {
+        background: rgba(245, 166, 35, 0.3) !important;
+    }
+
+    .logo {
+        text-decoration: none;
+    }
+}

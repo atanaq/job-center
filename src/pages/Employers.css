@@ -1,0 +1,503 @@
+.employers-page {
+    min-height: 100vh;
+    background: var(--gray-50);
+}
+
+/* Шапка */
+.employers-header {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
+    padding: 100px 0 80px;
+    color: var(--white);
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    margin-bottom: 40px;
+    transition: all var(--transition-fast);
+}
+
+.back-link:hover {
+    color: var(--white);
+    transform: translateX(-5px);
+}
+
+.header-content h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+
+.header-content p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    max-width: 600px;
+}
+
+/* Секции */
+.section-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section-description {
+    text-align: center;
+    color: var(--gray-600);
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+/* Преимущества */
+.benefits-section {
+    padding: 100px 0;
+    background: var(--white);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.benefit-card {
+    background: var(--gray-50);
+    padding: 32px;
+    border-radius: var(--radius-xl);
+    transition: all var(--transition-normal);
+    border: 1px solid var(--gray-100);
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    background: var(--white);
+}
+
+.benefit-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-light));
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.benefit-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 12px;
+}
+
+.benefit-card p {
+    color: var(--gray-600);
+    line-height: 1.6;
+}
+
+/* Специализации */
+.specializations-section {
+    padding: 80px 0;
+    background: var(--gray-50);
+}
+
+.specializations-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
+.specialization-tag {
+    padding: 14px 28px;
+    background: var(--white);
+    border: 2px solid var(--primary-blue);
+    color: var(--primary-blue);
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all var(--transition-fast);
+}
+
+.specialization-tag:hover {
+    background: var(--primary-blue);
+    color: var(--white);
+    transform: scale(1.05);
+}
+
+/* Этапы */
+.steps-section {
+    padding: 100px 0;
+    background: var(--white);
+}
+
+.steps-timeline {
+    max-width: 800px;
+    margin: 60px auto 0;
+}
+
+.step-item {
+    display: flex;
+    gap: 24px;
+    padding: 24px 0;
+    position: relative;
+}
+
+.step-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 28px;
+    top: 80px;
+    bottom: 0;
+    width: 2px;
+    background: var(--gray-200);
+}
+
+.step-number {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, var(--accent-orange), #e8941c);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.step-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 8px;
+}
+
+.step-content p {
+    color: var(--gray-600);
+    line-height: 1.6;
+}
+
+/* Статистика */
+.stats-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.stat-item {
+    text-align: center;
+    color: var(--white);
+}
+
+.stat-value {
+    display: block;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Форма для работодателей */
+.employer-form-section {
+    padding: 100px 0;
+    background: var(--gray-50);
+}
+
+.form-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    background: var(--white);
+    border-radius: var(--radius-2xl);
+    padding: 60px;
+    box-shadow: var(--shadow-xl);
+}
+
+.form-info h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 16px;
+}
+
+.form-info > p {
+    color: var(--gray-600);
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--gray-700);
+}
+
+.contact-item svg {
+    color: var(--primary-blue);
+}
+
+.contact-item a {
+    color: var(--primary-blue);
+    font-weight: 500;
+    transition: color var(--transition-fast);
+}
+
+.contact-item a:hover {
+    color: var(--primary-blue-light);
+}
+
+/* Форма */
+.employer-form .form-group {
+    margin-bottom: 20px;
+}
+
+.employer-form label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--gray-700);
+    margin-bottom: 8px;
+}
+
+.employer-form input,
+.employer-form textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    font-size: 1rem;
+    color: var(--gray-800);
+    transition: all var(--transition-fast);
+    background: var(--gray-50);
+}
+
+.employer-form input:focus,
+.employer-form textarea:focus {
+    border-color: var(--primary-blue);
+    background: var(--white);
+    box-shadow: 0 0 0 4px rgba(30, 58, 95, 0.1);
+}
+
+.employer-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.employer-form .form-group.error input,
+.employer-form .form-group.error textarea {
+    border-color: #e74c3c;
+    background: #fdf2f2;
+}
+
+.employer-form .error-message {
+    display: block;
+    color: #e74c3c;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: 8px;
+    margin-left: 18px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.employer-form .submit-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, var(--accent-orange), #e8941c);
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 25px rgba(245, 166, 35, 0.4);
+    transition: all var(--transition-fast);
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+.employer-form .submit-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(245, 166, 35, 0.5);
+}
+
+.employer-form .submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.employer-form .spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: var(--white);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Сообщение об успехе */
+.success-message {
+    text-align: center;
+    padding: 40px;
+}
+
+.success-icon-large {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--accent-green), #2ecc71);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    margin: 0 auto 24px;
+}
+
+.success-message h3 {
+    font-size: 1.5rem;
+    color: var(--gray-900);
+    margin-bottom: 12px;
+}
+
+.success-message p {
+    color: var(--gray-600);
+    margin-bottom: 24px;
+}
+
+.btn-secondary {
+    padding: 12px 24px;
+    background: var(--gray-100);
+    color: var(--gray-700);
+    font-weight: 600;
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-fast);
+    cursor: pointer;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background: var(--gray-200);
+}
+
+/* Футер */
+.employers-footer {
+    background: var(--primary-blue-dark);
+    padding: 24px 0;
+    color: var(--white);
+}
+
+.employers-footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.employers-footer p {
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+.employers-footer a {
+    color: var(--accent-orange);
+    font-weight: 500;
+    transition: opacity var(--transition-fast);
+}
+
+.employers-footer a:hover {
+    opacity: 0.8;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .form-wrapper {
+        grid-template-columns: 1fr;
+        padding: 40px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .employers-header {
+        padding: 80px 0 60px;
+    }
+
+    .header-content h1 {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .form-wrapper {
+        padding: 30px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .stat-value {
+        font-size: 2.25rem;
+    }
+
+    .employers-footer .container {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
