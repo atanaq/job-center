@@ -198,7 +198,7 @@ const Employers = () => {
                 <div className="container">
                     <div className="stats-grid">
                         <div className="stat-item">
-                            <span className="stat-value">89+</span>
+                            <span className="stat-value">300+</span>
                             <span className="stat-label">Компаний-партнёров</span>
                         </div>
                         <div className="stat-item">
