@@ -212,11 +212,13 @@
     font-size: 3rem;
     font-weight: 800;
     margin-bottom: 8px;
+    color: var(--white);
 }
 
 .stat-label {
     font-size: 1rem;
-    opacity: 0.9;
+    opacity: 0.6;
+    color: var(--white);
 }
 
 /* Форма для работодателей */
@@ -227,7 +229,7 @@
 
 .form-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
+    grid-template-columns: 1fr 1fr;
     gap: 60px;
     background: var(--white);
     border-radius: var(--radius-2xl);
@@ -273,6 +275,56 @@
 
 .contact-item a:hover {
     color: var(--primary-blue-light);
+}
+
+.employer-app-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-dark));
+    border-radius: var(--radius-xl);
+    color: var(--white);
+}
+
+.employer-app-icon {
+    width: 64px;
+    height: 64px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.employer-app-cta h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.employer-app-cta p {
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.7;
+    margin-bottom: 28px;
+}
+
+.employer-app-cta .submit-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent-orange);
+    color: var(--white);
+    padding: 14px 28px;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.employer-app-cta .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
 }
 
 /* Форма */

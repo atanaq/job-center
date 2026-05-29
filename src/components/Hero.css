@@ -5,6 +5,18 @@
     background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
 }
 
+.stat-value-hero {
+    display: block;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.stat-label-hero {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
 /* Фоновые элементы */
 .hero-bg {
     position: absolute;

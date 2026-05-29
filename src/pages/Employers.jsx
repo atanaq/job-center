@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { APP_INFO } from '../config/appLinks';
 import './Employers.css';
+import { Monitor } from 'lucide-react';
 
 // SVG иконки
 const ArrowLeftIcon = () => (
@@ -68,17 +70,14 @@ const SendIcon = () => (
     </svg>
 );
 
+const SmartphoneIcon = () => (
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+        <line x1="12" y1="18" x2="12.01" y2="18"></line>
+    </svg>
+);
+
 const Employers = () => {
-    const [formData, setFormData] = useState({
-        companyName: '',
-        contactPerson: '',
-        email: '',
-        phone: '',
-        message: ''
-    });
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [isSubmitted, setIsSubmitted] = useState(false);
-    const [errors, setErrors] = useState({});
 
     const benefits = [
         {
@@ -109,8 +108,8 @@ const Employers = () => {
     ];
 
     const steps = [
-        { number: '01', title: 'Заявка', description: 'Оставьте заявку на сотрудничество через форму или по телефону' },
-        { number: '02', title: 'Обсуждение', description: 'Наш менеджер свяжется для уточнения требований к кандидатам' },
+        { number: '01', title: 'Связь', description: 'Свяжитесь с нами по телефону или email для обсуждения сотрудничества' },
+        { number: '02', title: 'Обсуждение', description: 'Наш менеджер уточнит требования к кандидатам и условия партнёрства' },
         { number: '03', title: 'Подбор', description: 'Подберём подходящих кандидатов из базы выпускников' },
         { number: '04', title: 'Собеседование', description: 'Организуем встречу с отобранными специалистами' },
         { number: '05', title: 'Оформление', description: 'Поможем с документальным оформлением сотрудника' }
@@ -127,55 +126,6 @@ const Employers = () => {
         'Наладчики оборудования'
     ];
 
-    const validate = () => {
-        const newErrors = {};
-        if (!formData.companyName.trim()) newErrors.companyName = 'Введите название компании';
-        if (!formData.contactPerson.trim()) newErrors.contactPerson = 'Введите контактное лицо';
-        if (!formData.email.trim()) {
-            newErrors.email = 'Введите email';
-        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-            newErrors.email = 'Введите корректный email';
-        }
-        if (!formData.phone.trim()) newErrors.phone = 'Введите телефон';
-        setErrors(newErrors);
-        return Object.keys(newErrors).length === 0;
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        if (!validate()) return;
-
-        setIsSubmitting(true);
-        console.log('Заявка от работодателя:', formData);
-
-        await new Promise(resolve => setTimeout(resolve, 1500));
-
-        setIsSubmitting(false);
-        setIsSubmitted(true);
-        setFormData({ companyName: '', contactPerson: '', email: '', phone: '', message: '' });
-    };
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({ ...prev, [name]: value }));
-        if (errors[name]) setErrors(prev => ({ ...prev, [name]: '' }));
-    };
-
-    const formatPhone = (value) => {
-        const phone = value.replace(/\D/g, '');
-        if (phone.length < 2) return phone ? `+${phone}` : '';
-        if (phone.length < 5) return `+${phone[0]} (${phone.slice(1)}`;
-        if (phone.length < 8) return `+${phone[0]} (${phone.slice(1, 4)}) ${phone.slice(4)}`;
-        if (phone.length < 10) return `+${phone[0]} (${phone.slice(1, 4)}) ${phone.slice(4, 7)}-${phone.slice(7)}`;
-        return `+${phone[0]} (${phone.slice(1, 4)}) ${phone.slice(4, 7)}-${phone.slice(7, 9)}-${phone.slice(9, 11)}`;
-    };
-
-    const handlePhoneChange = (e) => {
-        const formatted = formatPhone(e.target.value);
-        setFormData(prev => ({ ...prev, phone: formatted }));
-        if (errors.phone) setErrors(prev => ({ ...prev, phone: '' }));
-    };
-
     return (
         <div className="employers-page">
             {/* Шапка */}
@@ -187,7 +137,7 @@ const Employers = () => {
                     </Link>
                     <div className="header-content">
                         <h1>Сотрудничество с работодателями</h1>
-                        <p>Найдите квалифицированных специалистов для вашей компании</p>
+                        <p>Информация для компаний-партнёров центра содействия трудоустройству</p>
                     </div>
                 </div>
             </header>
@@ -267,15 +217,15 @@ const Employers = () => {
                 </div>
             </section>
 
-            {/* Форма для работодателей */}
+            {/* Контакты и приложение */}
             <section className="employer-form-section">
                 <div className="container">
                     <div className="form-wrapper">
                         <div className="form-info">
-                            <h2>Оставить заявку на сотрудничество</h2>
+                            <h2>Начать сотрудничество</h2>
                             <p>
-                                Заполните форму, и наш менеджер свяжется с вами
-                                в течение одного рабочего дня
+                                Для обсуждения партнёрства свяжитесь с нами напрямую.
+                                Студенты и выпускники работают через приложение {APP_INFO.name}.
                             </p>
                             <div className="contact-info">
                                 <div className="contact-item">
@@ -289,106 +239,20 @@ const Employers = () => {
                             </div>
                         </div>
 
-                        {isSubmitted ? (
-                            <div className="success-message">
-                                <div className="success-icon-large">
-                                    <CheckCircleIcon />
-                                </div>
-                                <h3>Заявка отправлена!</h3>
-                                <p>Спасибо за интерес к сотрудничеству. Наш менеджер свяжется с вами в ближайшее время.</p>
-                                <button onClick={() => setIsSubmitted(false)} className="btn-secondary">
-                                    Отправить ещё одну заявку
-                                </button>
+                        <div className="employer-app-cta">
+                            <div className="employer-app-icon">
+                                <Monitor />
                             </div>
-                        ) : (
-                            <form className="employer-form" onSubmit={handleSubmit}>
-                                <div className={`form-group ${errors.companyName ? 'error' : ''}`}>
-                                    <label htmlFor="companyName">Название компании *</label>
-                                    <input
-                                        type="text"
-                                        id="companyName"
-                                        name="companyName"
-                                        value={formData.companyName}
-                                        onChange={handleChange}
-                                        placeholder="ООО «Название»"
-                                        disabled={isSubmitting}
-                                    />
-                                    {errors.companyName && <span className="error-message">{errors.companyName}</span>}
-                                </div>
-
-                                <div className={`form-group ${errors.contactPerson ? 'error' : ''}`}>
-                                    <label htmlFor="contactPerson">Контактное лицо *</label>
-                                    <input
-                                        type="text"
-                                        id="contactPerson"
-                                        name="contactPerson"
-                                        value={formData.contactPerson}
-                                        onChange={handleChange}
-                                        placeholder="Иванов Иван Иванович"
-                                        disabled={isSubmitting}
-                                    />
-                                    {errors.contactPerson && <span className="error-message">{errors.contactPerson}</span>}
-                                </div>
-
-                                <div className="form-row">
-                                    <div className={`form-group ${errors.email ? 'error' : ''}`}>
-                                        <label htmlFor="email">Email *</label>
-                                        <input
-                                            type="email"
-                                            id="email"
-                                            name="email"
-                                            value={formData.email}
-                                            onChange={handleChange}
-                                            placeholder="example@company.ru"
-                                            disabled={isSubmitting}
-                                        />
-                                        {errors.email && <span className="error-message">{errors.email}</span>}
-                                    </div>
-
-                                    <div className={`form-group ${errors.phone ? 'error' : ''}`}>
-                                        <label htmlFor="phone">Телефон *</label>
-                                        <input
-                                            type="tel"
-                                            id="phone"
-                                            name="phone"
-                                            value={formData.phone}
-                                            onChange={handlePhoneChange}
-                                            placeholder="+7 (___) ___-__-__"
-                                            disabled={isSubmitting}
-                                            maxLength={18}
-                                        />
-                                        {errors.phone && <span className="error-message">{errors.phone}</span>}
-                                    </div>
-                                </div>
-
-                                <div className="form-group">
-                                    <label htmlFor="message">Комментарий</label>
-                                    <textarea
-                                        id="message"
-                                        name="message"
-                                        value={formData.message}
-                                        onChange={handleChange}
-                                        placeholder="Опишите, какие специалисты вам нужны..."
-                                        rows={4}
-                                        disabled={isSubmitting}
-                                    />
-                                </div>
-
-                                <button type="submit" className="submit-btn" disabled={isSubmitting}>
-                                    {isSubmitting ? (
-                                        <>
-                                            <span className="spinner"></span>
-                                            <span>Отправка...</span>
-                                        </>
-                                    ) : (
-                                        <>
-                                            <span>Отправить заявку</span>
-                                            <SendIcon />
-                                        </>
-                                    )}
-                                </button>
-                            </form>
-                        )}
+                            <h3>Наше приложение</h3>
+                            <p>
+                                Подача заявок, консультации и отслеживание статуса —
+                                всё доступно в приложении. Скачайте его на главной странице.
+                            </p>
+                            <Link to="/#download" className="submit-btn">
+                                <span>Скачать приложение</span>
+                                <SendIcon />
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </section>

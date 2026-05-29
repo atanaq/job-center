@@ -1,7 +1,7 @@
-import React, { useState, useMemo } from 'react';
+import React from 'react';
 import './Professions.css';
+import { Monitor } from 'lucide-react';
 
-// SVG иконки
 const CarIcon = () => (
     <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1l-.8 1.63A6 6 0 0 0 2 12.42V16h2"></path>
@@ -47,15 +47,14 @@ const BriefcaseIcon = () => (
     </svg>
 );
 
-const ChevronRightIcon = () => (
+const SmartphoneIcon = () => (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="9 18 15 12 9 6"></polyline>
+        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+        <line x1="12" y1="18" x2="12.01" y2="18"></line>
     </svg>
 );
 
-const Professions = ({ searchQuery, onApplicationSubmit }) => {
-    const [selectedProfession, setSelectedProfession] = useState(null);
-
+const Professions = () => {
     const professions = [
         {
             id: 1,
@@ -64,7 +63,7 @@ const Professions = ({ searchQuery, onApplicationSubmit }) => {
             icon: <CarIcon />,
             salary: 'от 45 000 ₽',
             vacancies: 12,
-            color: 'blue'
+            color: 'blue',
         },
         {
             id: 2,
@@ -73,7 +72,7 @@ const Professions = ({ searchQuery, onApplicationSubmit }) => {
             icon: <WrenchIcon />,
             salary: 'от 55 000 ₽',
             vacancies: 8,
-            color: 'orange'
+            color: 'orange',
         },
         {
             id: 3,
@@ -82,7 +81,7 @@ const Professions = ({ searchQuery, onApplicationSubmit }) => {
             icon: <CpuIcon />,
             salary: 'от 50 000 ₽',
             vacancies: 15,
-            color: 'green'
+            color: 'green',
         },
         {
             id: 4,
@@ -91,23 +90,12 @@ const Professions = ({ searchQuery, onApplicationSubmit }) => {
             icon: <HardHatIcon />,
             salary: 'от 48 000 ₽',
             vacancies: 20,
-            color: 'purple'
-        }
+            color: 'purple',
+        },
     ];
 
-    const filteredProfessions = useMemo(() => {
-        if (!searchQuery) return professions;
-        return professions.filter(p =>
-            p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            p.description.toLowerCase().includes(searchQuery.toLowerCase())
-        );
-    }, [searchQuery]);
-
-    const handleApply = (profession) => {
-        setSelectedProfession(profession);
-        console.log('Заявка на профессию:', profession);
-        onApplicationSubmit();
-        setTimeout(() => setSelectedProfession(null), 500);
+    const scrollToDownload = () => {
+        document.getElementById('download')?.scrollIntoView({ behavior: 'smooth' });
     };
 
     return (
@@ -116,23 +104,23 @@ const Professions = ({ searchQuery, onApplicationSubmit }) => {
                 <div className="section-header">
                     <div className="section-badge">
                         <BriefcaseIcon />
-                        <span>Вакансии</span>
+                        <span>Направления</span>
                     </div>
                     <h2 className="section-title">
-                        Подай заявку на работу
-                        <span className="highlight"> по профессии</span>
+                        Профессии
+                        <span className="highlight"> в приложении</span>
                     </h2>
                     <p className="section-description">
-                        Выберите интересующую профессию и оставьте заявку.
-                        Данные автоматически сохраняются в базе.
+                        Ознакомьтесь с доступными направлениями трудоустройства.
+                        Подать заявку и отслеживать статус можно в приложении Job.Center.
                     </p>
                 </div>
 
                 <div className="professions-grid">
-                    {filteredProfessions.map((profession, index) => (
+                    {professions.map((profession, index) => (
                         <div
                             key={profession.id}
-                            className={`profession-card color-${profession.color} ${selectedProfession?.id === profession.id ? 'selected' : ''}`}
+                            className={`profession-card color-${profession.color}`}
                             style={{ '--delay': `${index * 0.1}s` }}
                         >
                             <div className="profession-header">
@@ -155,20 +143,14 @@ const Professions = ({ searchQuery, onApplicationSubmit }) => {
 
                             <button
                                 className="profession-btn"
-                                onClick={() => handleApply(profession)}
+                                onClick={scrollToDownload}
                             >
-                                <span>Подать заявку</span>
-                                <ChevronRightIcon />
+                                <Monitor />
+                                <span>Открыть в приложении</span>
                             </button>
                         </div>
                     ))}
                 </div>
-
-                {filteredProfessions.length === 0 && (
-                    <div className="no-results">
-                        <p>По запросу "{searchQuery}" профессий не найдено</p>
-                    </div>
-                )}
             </div>
         </section>
     );

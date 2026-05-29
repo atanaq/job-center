@@ -88,13 +88,13 @@ const Hero = () => {
     ];
 
     const automationFeatures = [
-        { icon: <DatabaseIcon />, text: 'Автоматическое сохранение в базу' },
-        { icon: <FileTextIcon />, text: 'Генерация документов' },
-        { icon: <ZapIcon />, text: 'Мгновенная обработка заявок' }
+        { icon: <DatabaseIcon />, text: 'База вакансий и партнёров' },
+        { icon: <FileTextIcon />, text: 'Электронные документы' },
+        { icon: <ZapIcon />, text: 'Быстрая подача заявок в приложении' }
     ];
 
-    const scrollToConsultation = () => {
-        document.getElementById('consultation')?.scrollIntoView({ behavior: 'smooth' });
+    const scrollToDownload = () => {
+        document.getElementById('download')?.scrollIntoView({ behavior: 'smooth' });
     };
 
     return (
@@ -117,7 +117,7 @@ const Hero = () => {
                     <div className="hero-text">
                         <div className="hero-badge">
                             <ZapIcon />
-                            <span>Онлайн-консультация</span>
+                            <span>Официальный сайт центра</span>
                         </div>
 
                         <h1 className="hero-title">
@@ -126,8 +126,8 @@ const Hero = () => {
                         </h1>
 
                         <p className="hero-description">
-                            Заменили ручной учет на умную автоматизацию.
-                            Полная прозрачность трудоустройства для студентов и партнеров.
+                            Узнайте о возможностях центра и скачайте приложение Job.Center
+                            для подачи заявок, консультаций и отслеживания трудоустройства.
                         </p>
 
                         {/* Фичи автоматизации */}
@@ -141,10 +141,10 @@ const Hero = () => {
                         </div>
 
                         <div className="hero-actions">
-                            <button className="btn-primary" onClick={scrollToConsultation}>
-                                Оставить заявку
+                            <button className="btn-primary" onClick={scrollToDownload}>
+                                Скачать приложение
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                    <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/>
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" strokeLinecap="round" strokeLinejoin="round"/>
                                 </svg>
                             </button>
 
@@ -174,12 +174,12 @@ const Hero = () => {
                             </div>
                             <div className="card-stats">
                                 <div className="stat">
-                                    <span className="stat-value">1,247</span>
-                                    <span className="stat-label">Студентов</span>
+                                    <span className="stat-value-hero">1,247</span>
+                                    <span className="stat-label-hero">Студентов</span>
                                 </div>
                                 <div className="stat">
-                                    <span className="stat-value">89</span>
-                                    <span className="stat-label">Партнеров</span>
+                                    <span className="stat-value-hero">300+</span>
+                                    <span className="stat-label-hero">Партнеров</span>
                                 </div>
                             </div>
                             <div className="card-progress">

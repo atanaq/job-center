@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
@@ -20,8 +21,8 @@ const Footer = () => {
                             </div>
                         </div>
                         <p className="footer-description">
-                            Центр содействия трудоустройству — современная платформа
-                            для связи студентов и работодателей
+                            Информационный сайт центра содействия трудоустройству.
+                            Для работы с заявками и вакансиями скачайте приложение Job.Center.
                         </p>
                     </div>
 
@@ -58,8 +59,8 @@ const Footer = () => {
                         <ul>
                             <li><a href="#hero">О центре</a></li>
                             <li><a href="#professions">Профессии</a></li>
-                            <li><a href="employers">Работодателям</a></li>
-                            <li><a href="#privacy">Конфиденциальность</a></li>
+                            <li><a href="#download">Скачать приложение</a></li>
+                            <li><Link to="/employers">Работодателям</Link></li>
                         </ul>
                     </div>
                 </div>
