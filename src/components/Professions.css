@@ -5,7 +5,6 @@
     overflow: hidden;
 }
 
-/* Заголовок секции */
 .section-header {
     text-align: center;
     max-width: 600px;
@@ -47,7 +46,6 @@
     line-height: 1.7;
 }
 
-/* Сетка профессий */
 .professions-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -56,7 +54,6 @@
     z-index: 2;
 }
 
-/* Карточка профессии */
 .profession-card {
     background: var(--white);
     border-radius: var(--radius-2xl);
@@ -112,7 +109,6 @@
     opacity: 0.7;
 }
 
-/* Хедер карточки */
 .profession-header {
     display: flex;
     justify-content: space-between;
@@ -179,7 +175,6 @@
     color: var(--gray-500);
 }
 
-/* Контент карточки */
 .profession-title {
     font-size: 1.35rem;
     font-weight: 700;
@@ -215,7 +210,6 @@
     color: var(--accent-green);
 }
 
-/* Кнопка */
 .profession-btn {
     width: 100%;
     display: flex;
@@ -262,7 +256,6 @@
     transform: translateX(5px);
 }
 
-/* Нет результатов */
 .no-results {
     text-align: center;
     padding: 60px 20px;
@@ -276,7 +269,6 @@
     color: var(--gray-500);
 }
 
-/* Декоративные связи */
 .connections {
     position: absolute;
     top: 50%;
@@ -307,7 +299,6 @@
     }
 }
 
-/* Адаптивность */
 @media (max-width: 1024px) {
     .professions-grid {
         grid-template-columns: repeat(2, 1fr);

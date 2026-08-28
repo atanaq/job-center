@@ -5,7 +5,6 @@
     background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
 }
 
-/* Фоновые элементы */
 .hero-bg {
     position: absolute;
     top: 0;
@@ -73,7 +72,6 @@
     50% { transform: translateY(30px); opacity: 0.6; }
 }
 
-/* Контент */
 .hero-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -82,7 +80,6 @@
     margin-bottom: 80px;
 }
 
-/* Текстовая часть */
 .hero-text {
     position: relative;
     z-index: 2;
@@ -125,7 +122,6 @@
     max-width: 500px;
 }
 
-/* Фичи автоматизации */
 .automation-features {
     display: flex;
     flex-wrap: wrap;
@@ -157,7 +153,6 @@
     color: var(--primary-blue);
 }
 
-/* Кнопки */
 .hero-actions {
     display: flex;
     align-items: center;
@@ -238,7 +233,6 @@
     color: var(--gray-800);
 }
 
-/* Визуальная часть */
 .hero-visual {
     position: relative;
     height: 400px;
@@ -382,7 +376,6 @@
     color: var(--primary-blue);
 }
 
-/* Преимущества */
 .advantages {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -468,7 +461,6 @@
     margin-top: 4px;
 }
 
-/* Адаптивность */
 @media (max-width: 1024px) {
     .hero-content {
         gap: 40px;

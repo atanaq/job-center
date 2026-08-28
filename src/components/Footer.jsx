@@ -8,7 +8,6 @@ const Footer = () => {
         <footer className="footer" id="footer">
             <div className="container">
                 <div className="footer-content">
-                    {/* Логотип и описание */}
                     <div className="footer-brand">
                         <div className="footer-logo">
                             <div className="logo-icon">
@@ -25,7 +24,6 @@ const Footer = () => {
                         </p>
                     </div>
 
-                    {/* Контакты */}
                     <div className="footer-contacts">
                         <h4>Контакты</h4>
                         <ul>
@@ -52,7 +50,6 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    {/* Ссылки */}
                     <div className="footer-links">
                         <h4>Информация</h4>
                         <ul>
@@ -64,7 +61,6 @@ const Footer = () => {
                     </div>
                 </div>
 
-                {/* Нижняя часть */}
                 <div className="footer-bottom">
                     <div className="footer-copyright">
                         © {currentYear} МАДК им. Николаева. Все права защищены.

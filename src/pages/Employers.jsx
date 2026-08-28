@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Employers.css';
 
-// SVG иконки
 const ArrowLeftIcon = () => (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <line x1="19" y1="12" x2="5" y2="12"></line>
@@ -178,7 +177,6 @@ const Employers = () => {
 
     return (
         <div className="employers-page">
-            {/* Шапка */}
             <header className="employers-header">
                 <div className="container">
                     <Link to="/" className="back-link">
@@ -192,7 +190,6 @@ const Employers = () => {
                 </div>
             </header>
 
-            {/* Преимущества */}
             <section className="benefits-section">
                 <div className="container">
                     <h2 className="section-title">Почему работодатели выбирают нас</h2>
@@ -208,7 +205,6 @@ const Employers = () => {
                 </div>
             </section>
 
-            {/* Специализации */}
             <section className="specializations-section">
                 <div className="container">
                     <h2 className="section-title">Доступные специализации</h2>
@@ -225,7 +221,6 @@ const Employers = () => {
                 </div>
             </section>
 
-            {/* Этапы сотрудничества */}
             <section className="steps-section">
                 <div className="container">
                     <h2 className="section-title">Как начать сотрудничество</h2>
@@ -243,7 +238,6 @@ const Employers = () => {
                 </div>
             </section>
 
-            {/* Статистика */}
             <section className="stats-section">
                 <div className="container">
                     <div className="stats-grid">
@@ -267,7 +261,6 @@ const Employers = () => {
                 </div>
             </section>
 
-            {/* Форма для работодателей */}
             <section className="employer-form-section">
                 <div className="container">
                     <div className="form-wrapper">
@@ -393,7 +386,6 @@ const Employers = () => {
                 </div>
             </section>
 
-            {/* Футер */}
             <footer className="employers-footer">
                 <div className="container">
                     <p>© {new Date().getFullYear()} МАДК им. Николаева. Центр содействия трудоустройству</p>

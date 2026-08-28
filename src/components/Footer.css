@@ -12,7 +12,6 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Бренд */
 .footer-brand {
     max-width: 320px;
 }
@@ -57,7 +56,6 @@
     opacity: 0.8;
 }
 
-/* Контакты */
 .footer-contacts h4,
 .footer-links h4 {
     font-size: 1.1rem;
@@ -108,7 +106,6 @@
     opacity: 1;
 }
 
-/* Ссылки */
 .footer-links li a {
     font-size: 0.95rem;
     opacity: 0.85;
@@ -121,7 +118,6 @@
     transform: translateX(5px);
 }
 
-/* Нижняя часть */
 .footer-bottom {
     display: flex;
     justify-content: space-between;
@@ -154,7 +150,6 @@
     opacity: 0.4;
 }
 
-/* Адаптивность */
 @media (max-width: 768px) {
     .footer-content {
         grid-template-columns: 1fr;

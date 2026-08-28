@@ -9,7 +9,6 @@ import Footer from './components/Footer';
 import Employers from './pages/Employers';
 import './App.css';
 
-// Главная страница
 function HomePage() {
     const [searchQuery, setSearchQuery] = useState('');
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -37,7 +36,6 @@ function HomePage() {
             </main>
             <Footer />
 
-            {/* Модальное окно успеха */}
             {isModalOpen && (
                 <div className="success-modal active">
                     <div className="success-modal-content">

@@ -22,7 +22,6 @@
     gap: 32px;
 }
 
-/* Логотип */
 .logo {
     display: flex;
     align-items: center;
@@ -67,7 +66,6 @@
     font-weight: 500;
 }
 
-/* Навигация */
 .nav {
     flex: 1;
     display: flex;
@@ -112,14 +110,12 @@
     width: 30px;
 }
 
-/* Правая часть */
 .header-right {
     display: flex;
     align-items: center;
     gap: 16px;
 }
 
-/* Поиск */
 .search-wrapper {
     position: relative;
     display: flex;
@@ -167,7 +163,6 @@
     transform: scale(1.05);
 }
 
-/* CTA Кнопка */
 .cta-btn {
     padding: 12px 24px;
     background: linear-gradient(135deg, var(--accent-orange), #e8941c);
@@ -188,7 +183,6 @@
     transform: translateY(0);
 }
 
-/* Мобильное меню */
 .mobile-menu-btn {
     display: none;
     width: 44px;
@@ -209,7 +203,6 @@
     display: none;
 }
 
-/* Адаптивность */
 @media (max-width: 1024px) {
     .nav-list {
         gap: 4px;
@@ -294,7 +287,6 @@
     .search-wrapper {
         display: none;
     }
-    /* Добавьте эти стили в конец файла Header.css */
 
     .nav-highlight {
         background: rgba(245, 166, 35, 0.2) !important;

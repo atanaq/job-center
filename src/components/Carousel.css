@@ -28,7 +28,7 @@
     color: var(--gray-500);
 }
 
-/* Основной карусель контейнер */
+
 .carousel {
     position: relative;
     max-width: 1400px;
@@ -47,7 +47,7 @@
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Слайд */
+
 .carousel-slide {
     min-width: 100%;
     position: relative;
@@ -107,7 +107,6 @@
     text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Кнопки навигации */
 .carousel-btn {
     position: absolute;
     top: 50%;
@@ -142,7 +141,6 @@
     right: 40px;
 }
 
-/* Индикаторы */
 .carousel-indicators {
     position: absolute;
     bottom: 30px;
@@ -174,7 +172,6 @@
     border-color: var(--accent-orange);
 }
 
-/* Прогресс-бар */
 .carousel-progress {
     position: absolute;
     bottom: 0;
@@ -202,7 +199,6 @@
     }
 }
 
-/* Миниатюры */
 .carousel-thumbnails {
     display: flex;
     gap: 16px;
@@ -271,7 +267,6 @@
     background: transparent;
 }
 
-/* Адаптивность */
 @media (max-width: 1024px) {
     .carousel-btn {
         width: 48px;
@@ -389,7 +384,6 @@
     }
 }
 
-/* Touch-свайп индикатор для мобильных */
 @media (max-width: 768px) {
     .carousel-container::after {
         content: '';

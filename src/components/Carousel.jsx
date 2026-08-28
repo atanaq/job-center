@@ -17,7 +17,6 @@ const Carousel = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-    // Данные слайдов (можно заменить на реальные фото)
     const slides = [
         {
             id: 1,
@@ -63,7 +62,6 @@ const Carousel = () => {
         setCurrentSlide(index);
     };
 
-    // Автопрокрутка
     useEffect(() => {
         let interval;
         if (isAutoPlaying) {
@@ -72,7 +70,6 @@ const Carousel = () => {
         return () => clearInterval(interval);
     }, [isAutoPlaying, nextSlide]);
 
-    // Пауза при наведении
     const handleMouseEnter = () => setIsAutoPlaying(false);
     const handleMouseLeave = () => setIsAutoPlaying(true);
 
@@ -118,7 +115,6 @@ const Carousel = () => {
                     </div>
                 </div>
 
-                {/* Навигационные кнопки */}
                 <button
                     className="carousel-btn carousel-btn-prev"
                     onClick={prevSlide}
@@ -134,7 +130,6 @@ const Carousel = () => {
                     <ChevronRightIcon />
                 </button>
 
-                {/* Индикаторы */}
                 <div className="carousel-indicators">
                     {slides.map((_, index) => (
                         <button
@@ -146,7 +141,6 @@ const Carousel = () => {
                     ))}
                 </div>
 
-                {/* Прогресс-бар автопрокрутки */}
                 <div className="carousel-progress">
                     <div
                         className="progress-bar"
@@ -159,7 +153,6 @@ const Carousel = () => {
                 </div>
             </div>
 
-            {/* Мини-превью */}
             <div className="container">
                 <div className="carousel-thumbnails">
                     {slides.map((slide, index) => (

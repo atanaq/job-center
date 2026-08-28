@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './ConsultationForm.css';
 
-// Простые SVG иконки вместо lucide-react
 const SendIcon = () => (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <line x1="22" y1="2" x2="11" y2="13"></line>
@@ -44,7 +43,6 @@ const FileCheckIcon = () => (
     </svg>
 );
 
-// Функция форматирования телефона
 const formatPhoneNumber = (value) => {
     const phoneNumber = value.replace(/\D/g, '');
     const phoneNumberLength = phoneNumber.length;
@@ -92,10 +90,8 @@ const ConsultationForm = ({ onSubmitSuccess }) => {
 
         setIsSubmitting(true);
 
-        // Имитация отправки на сервер
         console.log('Отправка данных:', formData);
 
-        // Имитация задержки сервера
         await new Promise(resolve => setTimeout(resolve, 1500));
 
         setIsSubmitting(false);
@@ -127,7 +123,6 @@ const ConsultationForm = ({ onSubmitSuccess }) => {
 
             <div className="container">
                 <div className="consultation-content">
-                    {/* Левая часть - информация */}
                     <div className="consultation-info">
                         <h2 className="consultation-title">
                             Оставь заявку на
@@ -172,7 +167,6 @@ const ConsultationForm = ({ onSubmitSuccess }) => {
                         </div>
                     </div>
 
-                    {/* Правая часть - форма */}
                     <div className="consultation-form-wrapper">
                         <form className="consultation-form" onSubmit={handleSubmit}>
                             <div className="form-header">

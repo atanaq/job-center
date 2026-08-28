@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Header.css';
 
-// SVG иконки
 const SearchIcon = () => (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="11" cy="11" r="8"></circle>
@@ -55,7 +54,6 @@ const Header = ({ searchQuery, setSearchQuery }) => {
         <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
             <div className="container">
                 <div className="header-content">
-                    {/* Логотип */}
                     <Link to="/" className="logo">
                         <div className="logo-icon">
                             <span>JC</span>
@@ -66,7 +64,6 @@ const Header = ({ searchQuery, setSearchQuery }) => {
                         </div>
                     </Link>
 
-                    {/* Навигация */}
                     <nav className={`nav ${isMobileMenuOpen ? 'open' : ''}`}>
                         <ul className="nav-list">
                             <li>
@@ -96,9 +93,7 @@ const Header = ({ searchQuery, setSearchQuery }) => {
                         </ul>
                     </nav>
 
-                    {/* Правая часть */}
                     <div className="header-right">
-                        {/* Поиск */}
                         <div className={`search-wrapper ${isSearchOpen ? 'open' : ''}`}>
                             <input
                                 type="text"
@@ -116,7 +111,6 @@ const Header = ({ searchQuery, setSearchQuery }) => {
                             </button>
                         </div>
 
-                        {/* CTA Кнопка */}
                         <button
                             className="cta-btn"
                             onClick={() => scrollToSection('consultation')}
@@ -124,7 +118,6 @@ const Header = ({ searchQuery, setSearchQuery }) => {
                             Оставить заявку
                         </button>
 
-                        {/* Мобильное меню */}
                         <button
                             className="mobile-menu-btn"
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -136,7 +129,6 @@ const Header = ({ searchQuery, setSearchQuery }) => {
                 </div>
             </div>
 
-            {/* Оверлей для мобильного меню */}
             {isMobileMenuOpen && (
                 <div
                     className="mobile-overlay"

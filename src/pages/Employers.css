@@ -3,7 +3,6 @@
     background: var(--gray-50);
 }
 
-/* Шапка */
 .employers-header {
     background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
     padding: 100px 0 80px;
@@ -37,7 +36,6 @@
     max-width: 600px;
 }
 
-/* Секции */
 .section-title {
     font-size: 2.25rem;
     font-weight: 700;
@@ -53,7 +51,6 @@
     margin-bottom: 40px;
 }
 
-/* Преимущества */
 .benefits-section {
     padding: 100px 0;
     background: var(--white);
@@ -104,7 +101,6 @@
     line-height: 1.6;
 }
 
-/* Специализации */
 .specializations-section {
     padding: 80px 0;
     background: var(--gray-50);
@@ -134,7 +130,6 @@
     transform: scale(1.05);
 }
 
-/* Этапы */
 .steps-section {
     padding: 100px 0;
     background: var(--white);
@@ -190,7 +185,6 @@
     line-height: 1.6;
 }
 
-/* Статистика */
 .stats-section {
     padding: 80px 0;
     background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
@@ -219,7 +213,6 @@
     opacity: 0.9;
 }
 
-/* Форма для работодателей */
 .employer-form-section {
     padding: 100px 0;
     background: var(--gray-50);
@@ -275,7 +268,6 @@
     color: var(--primary-blue-light);
 }
 
-/* Форма */
 .employer-form .form-group {
     margin-bottom: 20px;
 }
@@ -375,7 +367,6 @@
     to { transform: rotate(360deg); }
 }
 
-/* Сообщение об успехе */
 .success-message {
     text-align: center;
     padding: 40px;
@@ -419,7 +410,6 @@
     background: var(--gray-200);
 }
 
-/* Футер */
 .employers-footer {
     background: var(--primary-blue-dark);
     padding: 24px 0;
@@ -447,7 +437,6 @@
     opacity: 0.8;
 }
 
-/* Адаптивность */
 @media (max-width: 1024px) {
     .form-wrapper {
         grid-template-columns: 1fr;

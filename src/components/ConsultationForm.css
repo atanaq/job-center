@@ -4,7 +4,6 @@
     overflow: hidden;
 }
 
-/* Фон */
 .consultation-bg {
     position: absolute;
     top: 0;
@@ -34,7 +33,6 @@
             radial-gradient(circle at 80% 70%, rgba(255,255,255,0.05) 0%, transparent 50%);
 }
 
-/* Контент */
 .consultation-content {
     position: relative;
     z-index: 1;
@@ -44,7 +42,6 @@
     align-items: center;
 }
 
-/* Левая часть - информация */
 .consultation-info {
     color: var(--white);
 }
@@ -67,7 +64,6 @@
     margin-bottom: 40px;
 }
 
-/* Фичи */
 .info-features {
     display: flex;
     flex-direction: column;
@@ -122,7 +118,6 @@
     margin-top: 2px;
 }
 
-/* Правая часть - форма */
 .consultation-form-wrapper {
     display: flex;
     justify-content: flex-end;
@@ -154,7 +149,6 @@
     color: var(--gray-500);
 }
 
-/* Поля формы */
 .form-group {
     margin-bottom: 20px;
 }
@@ -199,7 +193,6 @@
     cursor: not-allowed;
 }
 
-/* Состояние ошибки */
 .form-group.error input {
     border-color: #e74c3c;
     background: #fdf2f2;
@@ -219,7 +212,6 @@
     padding-left: 0;
 }
 
-/* Кнопка отправки */
 .submit-btn {
     width: 100%;
     display: flex;
